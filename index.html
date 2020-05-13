@@ -5,12 +5,21 @@
 		<title>俄罗斯方块</title>
 		<script src="lodash.js"></script>
 		<style>
+			@media screen and (min-width: 800px) {
+				.allContainer {
+					display: block!important;
+				}
+				.warmPrompt {
+					display: none!important;
+				}
+        	}
             * {
                 margin: 0;
                 padding: 0;
             }
             /* 整个页面容器 */
             .allContainer {
+				display: none;
                 width: 360px;
                 margin: 0 auto;
             }
@@ -29,14 +38,16 @@
                 justify-content: space-around;
                 width: 100%;
                 padding: 10px 0;
+				color: #fff;
                 /* height: 30px; */
-                background-color: #65b37c;
+                /* background-color: #65b37c; */
+				background-color: #068d2e;
             }
 			.container {
 				position: relative;
 				width: 360px;
 				height: 540px;
-				background-color: gray;
+				background-color: rgb(207, 207, 207);
 			}
 
 			.activity_model {
@@ -45,7 +56,7 @@
 				height: 30px;
 				top: 60px;
 				left: 60px;
-				background-color: rgb(76, 109, 110);
+				background-color: rgb(96, 161, 214);
 				border: .3px solid #eee;
 				box-sizing: border-box;
 			}
@@ -56,7 +67,7 @@
 				height: 30px;
 				top: 60px;
 				left: 60px;
-				background-color: rgb(76, 109, 110);
+				background-color: rgb(96, 161, 214);
 				border: .3px solid #eee;
 				/* background-color: cadetblue; */
 				/* border: .3px solid #333; */
@@ -69,9 +80,13 @@
                 width: 100%;
                 padding: 5px;
                 font-size: 18px;
-                /* color: #ffffff; */
-                background-color: #65b37c;
+                color: #ffffff;
+                background-color: #068d2e;
             }
+
+			.warmPrompt {
+				display: block;
+			}
 		</style>
 	</head>
 	<body>
@@ -93,7 +108,11 @@
             <div class="footer">
                 <button id="begin" onclick="beginGame()">开始游戏</button>
             </div>
-        </div>
+		</div>
+		
+		<div class="warmPrompt">
+			<h3>温馨提示：请在电脑上玩耍或调整窗口大小后玩耍</h3>
+		</div>
 
 		<script type="text/javascript">
 			HTMLElement.prototype.__defineGetter__("currentStyle", function () {
